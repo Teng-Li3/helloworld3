@@ -1,0 +1,26 @@
+---
+title: "Stat 385 Homework 1"
+author: "Teng Li"
+date: "6/24/2017"
+output: html_document
+---
+
+
+## Exercise 0: Know Thine Environment
+```{r}
+yn = readline(prompt="Hello, what is your name? ")
+cat("Hello ", yn,"! I am Teng Li.", sep = ",")
+```
+
+
+## Exercise 1: Where am I?
+1. The instructor for this class is James Balamuta.
+2. The office is 122 Illin Hall. The office hours are Monday and Tuesday from 12:00 PM - 1:00 PM CDT.
+3. The right way is: [STAT 385] Specific group project question. And this must be sent from an @illinois.edu account.
+4. The time for the class is 3:00 PM - 4:50 PM, on Monday, Tuesday and Thursday. The location is Sieble 1105.
+5. There are 2 exams. The mid-term exam is on July 6th. And the final exam is on August 3rd.
+6. There are four phases: Proposal, Progress Update, Project Presentation, Final Project Report. Each phase is worth 43.75 points. The student's grade is based on the contribution and individual peer evaluations.
+
+
+## Exercise 2: To github and Beyond
+
