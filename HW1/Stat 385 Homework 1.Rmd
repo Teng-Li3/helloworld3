@@ -9,7 +9,7 @@ output: html_document
 ## Exercise 0: Know Thine Environment
 ```{r}
 yn = readline(prompt="Hello, what is your name? ")
-cat("Hello ", yn,"! I am Teng Li.", sep = ",")
+cat("Hello ", yn,"! I am Teng Li.", sep = "")
 ```
 
 ![Online R-studio](/Users/tengli/Desktop/q1.png)
