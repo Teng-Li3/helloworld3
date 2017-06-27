@@ -1,0 +1,199 @@
+---
+title: "Stat 385 Homework 1"
+author: "Teng Li"
+date: "6/24/2017"
+output: html_document
+---
+
+
+## Exercise 0: Know Thine Environment
+```{r}
+yn = readline(prompt="Hello, what is your name? ")
+cat("Hello ", yn,"! I am Teng Li.", sep = ",")
+```
+
+![Online R-studio](/Users/tengli/Desktop/q1.png)
+
+
+## Exercise 1: Where am I?
+1. The instructor for this class is James Balamuta.
+2. The office is 122 Illin Hall. The office hours are Monday and Tuesday from 12:00 PM - 1:00 PM CDT.
+3. The right way is: [STAT 385] Specific group project question. And this must be sent from an @illinois.edu account.
+4. The time for the class is 3:00 PM - 4:50 PM, on Monday, Tuesday and Thursday. The location is Sieble 1105.
+5. There are 2 exams. The mid-term exam is on July 6th. And the final exam is on August 3rd.
+6. There are four phases: Proposal, Progress Update, Project Presentation, Final Project Report. Each phase is worth 43.75 points. The student's grade is based on the contribution and individual peer evaluations.
+
+
+## Exercise 2: To github and Beyond
+1. Github profile : https://github.com/Teng-Li3
+2. Repository: https://github.com/Teng-Li3/helloworld3
+
+## Exercise 4:
+3. Absolute path: /master/helloworld3/HW1/analysis. Relative path: ./analysis.
+4. 
+   + If we only use $RANDOM, we have 26926, 8097, and 31950. Using $((1+ RANDOM % 10)), we have the number 4, which is in the range of 1-10. 
+   + Both command will generate random numbers.
+5. 
+  + 5. First 5 numbers: 10,3,8,4,5.  Last 5 numbers: 6,2,5,5,7. They are all in the range 1-10. However, they are different random numbers.
+  + 7. 
+       + Section 1:Define variables for later loop.
+       + Section 2: A while loop that calculate the summation of all the numbers in a line (sum) and how many numbers we have (count). 
+       + Section 3: If statement: if the procudure is right, then calculate the mean of these numbers. (mu=sum/count) If the procedure is not right, say :Please supply a file with more than 1 line of numerical input.
+       + Mean of continuous uniform distribution is $$(\frac{a+b}{2})$$, where a,b are the minimum and maximum limits of the sample. The results is fixed. However, in our case, if we have different numbers (count), we might have different results.
+       + Use cd/../  to change to my home directory.
+
+
+
+## Exercise 5 part(1)
+```{r}
+a = rep(0,25)                        # Define a
+  
+b1 = seq(1,25,by=1 ) 
+b =  b1^2                            # Define b
+
+d=seq(0,1,length.out=25)             # Define d
+
+e1=seq(1,25)
+e=log(e1)                            # Define e
+
+set.seed(25) 
+y  = 2 * a + b / 4 + 8 * d - 3 * e + rnorm(25, 0 , 1)          # Define y
+```
+
+## Exercise 5 part(2) : define y with seed.
+```{r}
+a = rep(42,25)                       # Define a
+
+b1 = seq(1,25,by=1 )
+b =  b1^2                            # Define b
+
+d=seq(0,1,length.out=25)             # Define d
+
+e1=seq(1,25)
+e=log(e1)                            # Define e
+
+set.seed(25)                         # With seed
+y  = 2 * a + b / 4 + 8 * d - 3 * e + rnorm(25, 0 , 1)                # Define y
+```
+
+## Exercise 5 part(3): define y without seed.
+```{r}
+a = rep(42,25)                       # Define a
+
+b1 = seq(1,25,by=1 )
+b =  b1^2                            # Define b
+
+d=seq(0,1,length.out=25)             # Define d
+
+e1=seq(1,25)
+e=log(e1)                            # Define e
+
+y  = 2 * a + b / 4 + 8 * d - 3 * e + rnorm(25, 0 , 1)                # Define y        
+```
+
+The difference:
+
+1. [1]  84.03817  82.21230  82.46752  85.16265  85.25489  88.84585  94.14631  96.60630
+ [9] 100.42464 105.03435 108.64686 114.88699 122.00722 127.95978 136.87520 145.60981
+[17] 152.36692 162.95795 172.96257 180.33637 192.34051 202.89565 214.33211 228.50027
+[25] 237.00773
+
+2. [1]  83.14647  84.15668  83.68915  83.69165  85.85374  88.09293  91.90211  96.40126
+ [9] 100.25712 105.46445 111.53414 114.77233 121.80974 128.33190 135.88071 144.93671
+[17] 153.13824 162.86495 170.92086 182.13512 191.73482 203.01131 211.83194 226.48465
+[25] 237.85666
+
+3. All the numbers are different. However, the differences are very small.
+
+
+
+## Exercise 5 part(4)
+```{r}
+f =letters
+
+g= c(f,b)
+```
+Numbers in b are now in "". For example, we have "1".
+
+
+## Exercise 5 part (5)
+```{r}
+m = y>10                       # Create logical vetor
+
+sum(y>10)                      # Number of elements greater than 10
+```
+
+
+## Exercise 6 
+```{r}
+# Problem 1
+for (n in 1:100)
+{
+  cat( (-1)^(2*n+1))
+}
+
+# Problem 2
+for (n in 1:100)
+{
+  cat( (-1)^(2*n))
+}
+
+```
+
+Compute the summation $$\sum_{n=2}^{100} cos(n*pi)/sqrt(n)$$
+```{r}
+for (n in 2:100)
+{
+  cat((cos(n*pi) )/(sqrt(n)))
+}
+```
+
+Compute the summation $$\sum_{n=2}^{100} (\frac{(-1)^{n+1}}{n})$$
+```{r}
+for (n in 2:100)
+{
+  cat(((-1)^(n+1))/(n))
+}
+```
+
+Compute the summation $$\sum_{n=1}^{100} (\frac{(-1)^{2n}n}{n^2+5})$$
+```{r}
+for (n in 1:100)
+{
+  cat((((-1)^(2*n))*n)/(2*n+5))
+}
+```
+
+
+
+
+## Exercise 7
+```{r}
+for (i in 1:100)
+{
+  if (i %% 3 == 0 || i %% 5 == 0){
+    cat('FizzBuzz')
+  } 
+  
+  else if (i %% 3 == 0 ) {
+    cat('Fizz')
+  } 
+  
+  else if (i %% 5 == 0 ) {
+    cat('Buzz')
+  } 
+  
+  else {
+    cat(i)
+  }
+    
+}
+```
+
+
+
+
+
+
+
+
