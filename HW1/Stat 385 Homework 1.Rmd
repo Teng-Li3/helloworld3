@@ -142,26 +142,35 @@ for (n in 1:100)
 
 Compute the summation $$\sum_{n=2}^{100} cos(n*pi)/sqrt(n)$$
 ```{r}
+i=0
 for (n in 2:100)
 {
-  cat((cos(n*pi) )/(sqrt(n)))
+  new_num=cos(n*pi) /(sqrt(n))
+  i=i+new_num
 }
+cat(new_num)
 ```
 
 Compute the summation $$\sum_{n=2}^{100} (\frac{(-1)^{n+1}}{n})$$
 ```{r}
+i=0
 for (n in 2:100)
 {
-  cat(((-1)^(n+1))/(n))
+  new_num=((-1)^(n+1))/(n)
+  i=i+new_num
 }
+cat(new_num)
 ```
 
 Compute the summation $$\sum_{n=1}^{100} (\frac{(-1)^{2n}n}{n^2+5})$$
 ```{r}
+i=0
 for (n in 1:100)
 {
-  cat((((-1)^(2*n))*n)/(2*n+5))
+  new_num=(((-1)^(2*n))*n)/(2*n+5)
+  i=i+new_num
 }
+cat(new_num)
 ```
 
 
